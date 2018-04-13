@@ -79,7 +79,7 @@ abstract class UR_Form_Field {
 	 * Includes any classes we need within frontend.
 	 */
 	public function frontend_includes( $data = array(), $form_id, $field_type, $field_key ) {
-
+		
 		$this->form_id = $form_id;
 
 		$form_data = array(
@@ -236,7 +236,7 @@ abstract class UR_Form_Field {
 
 					$value = 'user_' == $sub_string_key && 'field_name' == $setting_key ? trim( str_replace( 'user_registration_', '', $this->id ) ) : $this->get_general_setting_data( $setting_key );
 
-					$general_setting_wrapper .= '<input value="' . $value . '" data-field="' . $setting_key . '" class="ur-general-setting-field ur-type-' . $setting_value['type'] . '" type="text" name="' . $setting_value['name'] . '"  placeholder="' . $setting_value['placeholder'] . '"';
+					$general_setting_wrapper .= '<input  value="' . $value . '" data-field="' . $setting_key . '" class="ur-general-setting-field ur-type-' . $setting_value['type'] . '" type="text" name="' . $setting_value['name'] . '"  placeholder="' . $setting_value['placeholder'] . '"';
 
 					if ( true == $setting_value['required'] ) {
 
