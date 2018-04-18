@@ -102,6 +102,7 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 		$rules['conditional_rules'] = isset ( $args['conditional_rules'] ) ? $args['conditional_rules'] : '';
 		$rules['logic_gate'] = isset( $args['logic_gate'] ) ? $args['logic_gate'] : '';
 		$rules['rules'] = isset( $args['rules'] ) ? $args['rules'] : '' ;
+		$rules['required'] = isset( $args['required'] ) ? $args['required'] : '';
 		$rules = wp_json_encode( $rules );
 		$enable_conditional_logic = isset( $args['enable_conditional_logic'] ) ? $args['enable_conditional_logic'] : '';
 	
