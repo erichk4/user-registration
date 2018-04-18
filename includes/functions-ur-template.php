@@ -103,7 +103,7 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 		$rules['logic_gate'] = isset( $args['logic_gate'] ) ? $args['logic_gate'] : '';
 		$rules['rules'] = isset( $args['rules'] ) ? $args['rules'] : '' ;
 		$rules = wp_json_encode( $rules );
-		$enable_conditional_logic = $args['enable_conditional_logic'];
+		$enable_conditional_logic = isset( $args['enable_conditional_logic'] ) ? $args['enable_conditional_logic'] : '';
 	
 
 		$defaults = array(
@@ -181,7 +181,7 @@ if ( ! function_exists( 'user_registration_form_field' ) ) {
 
 			case 'textarea' :
 
-				$field .= '<textarea data-rules= "'. ( isset( $enable_conditional_logic ) && $enable_conditional_logic === '1' ? $rules : '' ) .'" data-id=""' . esc_attr( $key ) . '"" name="' . esc_attr( $key ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . ( empty( $args['custom_attributes']['rows'] ) ? ' rows="2"' : '' ) . ( empty( $args['custom_attributes']['cols'] ) ? ' cols="5"' : '' ) . implode( ' ', $custom_attributes ) . '>' . esc_textarea( $value ) . '</textarea>';
+				$field .= '<textarea data-rules= "'. ( isset( $enable_conditional_logic ) && $enable_conditional_logic === '1' ? $rules : '' ) .'" data-id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" class="input-text ' . esc_attr( implode( ' ', $args['input_class'] ) ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" ' . ( empty( $args['custom_attributes']['rows'] ) ? ' rows="2"' : '' ) . ( empty( $args['custom_attributes']['cols'] ) ? ' cols="5"' : '' ) . implode( ' ', $custom_attributes ) . '>' . esc_textarea( $value ) . '</textarea>';
 
 				break;
 
